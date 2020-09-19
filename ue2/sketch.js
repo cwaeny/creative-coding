@@ -5,9 +5,6 @@ function setup() {
 function draw() {
   noFill();
   background('#230243');
-  stroke('#654d7b');
-  strokeWeight(1);
-  line(25,25,825,825);
 
   let b = color('#ea5666');
   let c = color('#f4f31');
