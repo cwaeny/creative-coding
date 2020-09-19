@@ -113,10 +113,19 @@ body {
 
  h1 {
    font-family: 'Manrope', sans-serif;
+   font-size: 3.5rem;
+   font-weight: 200;
+   margin-bottom: 5vh;
+ }
+
+@media (min-width: 992px){
+ h1 {
+   font-family: 'Manrope', sans-serif;
    font-size: 5rem;
    font-weight: 200;
    margin-bottom: 5vh;
  }
+}
 
 .hashtag {
   color: #6982ff;
@@ -138,9 +147,16 @@ body {
  }
 
  .intro {
+   margin-top: 10vh;
+   margin-bottom: 10vh;
+ }
+
+@media (min-width: 992px){
+ .intro {
    margin-top: 23vh;
    margin-bottom: 15vh;
  }
+}
 
  .ue1 {
    background-image: url('../img/mockup-ue1.png');
@@ -164,9 +180,11 @@ body {
    background-color: #f7f7f7;
  }
 
+@media (min-width: 992px){
  .no-gutters {
    margin-right: -15px;
  }
+}
 
 .ue {
   margin-bottom: 5vh;
@@ -193,10 +211,16 @@ a:hover {
   border-bottom: 2px solid rgb(105, 130, 255, 1);
 }
 
+@media (min-width: 992px){
 .description-container {
   padding-left: 2rem;
   padding-right: 2.1rem;
   padding-top: 20%;
+}
+}
+
+.description-container {
+  padding: 10%;
 }
 
 .description-container > p {
