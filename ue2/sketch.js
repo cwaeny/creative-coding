@@ -1,11 +1,10 @@
 function setup() {
   createCanvas(850, 850);
-  background('#230243');
 }
 
 function draw() {
   noFill();
-
+  background('#230243');
   stroke('#654d7b');
   strokeWeight(1);
   line(25,25,825,825);
