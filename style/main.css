@@ -160,7 +160,7 @@ body {
 
  .ue1 {
    background-image: url('../img/mockup-ue1.png');
-   background-size: cover;
+   background-size: 100%;
    background-repeat:no-repeat;
    background-position: center;
    min-height: 50vh;
@@ -169,7 +169,16 @@ body {
 
  .ue2 {
    background-image: url('../img/mockup-ue2.png');
-   background-size: cover;
+   background-size: 85%;
+   background-repeat:no-repeat;
+   background-position: center;
+   min-height: 50vh;
+   background-color: #f7f7f7;
+ }
+
+ .ue3 {
+   background-image: url('../img/mockup-ue3.gif');
+   background-size: 90%;
    background-repeat:no-repeat;
    background-position: center;
    min-height: 50vh;
@@ -242,4 +251,8 @@ h6 {
   font-size: 1rem;
   font-weight: 300;
   margin-top: 1rem;
+}
+
+a.secondary {
+  margin-left: 1.5rem;
 }
