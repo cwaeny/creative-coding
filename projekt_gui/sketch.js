@@ -1,9 +1,9 @@
 /*  –––– –––– –––– –––– Variablen / Slider Ranges –––– –––– –––– ––––  */
 
-var menge = 30;
+var menge = 10;
 //set slider range with magic variables
 var mengeMin = 1;
-var mengeMax = 200;
+var mengeMax = 10;
 var mengeSteps = 1;
 
 var windrichtung = 45;
@@ -26,7 +26,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background('#F4F1F0');
 
-  gui = createGui('Niederschlag ☔');
+  gui = createGui('Rainy days ☔');
   gui.addGlobals('menge', 'windrichtung', 'wahrscheinlichkeit');
 
   //only call draw when then gui is changed
@@ -37,18 +37,37 @@ function setup() {
 
 function draw() {
   colorMode(HSL);
+  angleMode(DEGREES);
   let mint = color(100, 24, 81);
-  let grey = color(15, 15, 95);
+  let green = color(182, 50, 20);
+  let beige = color(25, 64, 68);
 
-  fill(mint);
-  stroke(grey);
-  strokeWeight(3);
+  let size = wahrscheinlichkeit + 50;
+  randomSeed(0); //let drops keep its color even when slider changes
 
-  let size = wahrscheinlichkeit * 10;
 
-  for (let i = 50; i <= width-200; i+=50) {
-    for (let q = 50; q <= height-200; q+=50) {
-      square(50 + i, 50 + q, size, 0, size, size, size);
+  //draw drops – each with a random color
+  for (let i = 0; i <= width; i+=60) {
+    for (let q = 0; q <= height; q+=60) {
+      let randCol = int(random(0, 3));
+      if (randCol == 0) {
+        noFill();
+        stroke(green);
+        strokeWeight(2);
+        square(0 + i, 0 + q, size, 0, size, size, size);
+      }
+      if (randCol == 1) {
+        noFill();
+        stroke(mint);
+        strokeWeight(2);
+        square(0 + i, 0 + q, size, 0, size, size, size);
+      }
+      if (randCol == 2) {
+        noFill();
+        stroke(beige);
+        strokeWeight(2);
+        square(0 + i, 0 + q, size, 0, size, size, size);
+      }
     }
   }
 
