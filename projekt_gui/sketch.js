@@ -1,62 +1,56 @@
+/*  –––– –––– –––– –––– Variablen / Slider Ranges –––– –––– –––– ––––  */
 
+var menge = 30;
+//set slider range with magic variables
+var mengeMin = 1;
+var mengeMax = 200;
+var mengeSteps = 1;
 
-/*  –––– –––– –––– –––– Variablen –––– –––– –––– ––––  */
+var windrichtung = 45;
+//set slider range with magic variables
+var windrichtungMin = 1;
+var windrichtungMax = 360;
+var windrichtungSteps = 1;
 
-var arc;
-var wahrscheinlichkeit = 30;
-var menge = 10
+var wahrscheinlichkeit = 5;
+//set slider range with magic variables
+var wahrscheinlichkeitMin = 1;
+var wahrscheinlichkeitMax = 100;
+var wahrscheinlichkeitSteps = 1;
 
-/*let dark = color('#19494B');
-let mint = color('#CADAC2');
-let grey = color('#F4F1F0');
-let beige = color('#E2A67B');*/
+/*  –––– –––– –––– –––– GUI Setup –––– –––– –––– ––––  */
 
 var gui;
 
-
-/*  –––– –––– –––– –––– Setup –––– –––– –––– ––––  */
-
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background('#19494B');
+  background('#F4F1F0');
 
-  sliderRange(0, 100, 1);
   gui = createGui('Niederschlag ☔');
-  gui.addGlobals('wahrscheinlichkeit', 'menge');
+  gui.addGlobals('menge', 'windrichtung', 'wahrscheinlichkeit');
 
   //only call draw when then gui is changed
   noLoop();
 }
 
-
 /*  –––– –––– –––– –––– Draw –––– –––– –––– ––––  */
 
-
 function draw() {
-  angleMode(DEGREES);
+  colorMode(HSL);
+  let mint = color(100, 24, 81);
+  let grey = color(15, 15, 95);
 
-  // first arc
-  noFill();
-  strokeWeight(2);
-  stroke('#CADAC2');
-  rectMode(CORNERS);
-  for (let x = 100; x <= width-200; x += 100) {
-    for (let y = 100; y <= height-200; y += 100) {
-      arc(100 + x, 100 + y, 50, 50, 0, 270, PIE);
+  fill(mint);
+  stroke(grey);
+  strokeWeight(3);
+
+  let size = wahrscheinlichkeit * 10;
+
+  for (let i = 50; i <= width-200; i+=50) {
+    for (let q = 50; q <= height-200; q+=50) {
+      square(50 + i, 50 + q, size, 0, size, size, size);
     }
-  };
-
-
-
-
-
-
-
-
-
-
-
+  }
 
 
 }
