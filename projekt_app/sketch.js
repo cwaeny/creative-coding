@@ -4,6 +4,7 @@ let projektTitel = 'Is it raining, man?';
 let wahrscheinlichkeit = '% probability';
 let fontBlack;
 let probability;
+let chanceOfRain;
 let input;
 let button;
 
@@ -81,35 +82,35 @@ function draw() {
 
   fill('#022941');
   noStroke();
-  arc(500, 200, 300, 300, -90, probability);
+  arc(500, 200, 300, 300, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(340, 180, 100, 100, -90, probability);
+  arc(340, 180, 100, 100, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(510, 330, 110, 110, -90, probability);
+  arc(510, 330, 110, 110, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(400, 330, 130, 130, -90, probability);
+  arc(400, 330, 130, 130, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(290, 270, 200, 200, -90, probability);
+  arc(290, 270, 200, 200, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(640, 340, 170, 170, -90, probability);
+  arc(640, 340, 170, 170, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(670, 220, 90, 90, -90, probability);
+  arc(670, 220, 90, 90, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(750, 270, 150, 150, -90, probability);
+  arc(750, 270, 150, 150, 270, probability);
 
   /*  –––– –––– –––– –––– RAINDROPS –––– –––– –––– ––––  */
 
@@ -173,64 +174,65 @@ function draw() {
 
   fill('#022941');
   noStroke();
-  arc(700, 670, 35, 35, -90, probability);
+  arc(700, 670, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(360, 850, 35, 35, -90, probability);
+  arc(360, 850, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(230, 760, 35, 35, -90, probability);
+  arc(230, 760, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(680, 460, 35, 35, -90, probability);
+  arc(680, 460, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(300, 650, 35, 35, -90, probability);
+  arc(300, 650, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(800, 550, 35, 35, -90, probability);
+  arc(800, 550, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(800, 830, 35, 35, -90, probability);
+  arc(800, 830, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(250, 500, 35, 35, -90, probability);
+  arc(250, 500, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(400, 560, 35, 35, -90, probability);
+  arc(400, 560, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(550, 600, 35, 35, -90, probability);
+  arc(550, 600, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(500, 460, 35, 35, -90, probability);
+  arc(500, 460, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(600, 860, 35, 35, -90, probability);
+  arc(600, 860, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(520, 730, 35, 35, -90, probability);
+  arc(520, 730, 35, 35, 270, probability);
 
   fill('#022941');
   noStroke();
-  arc(820, 380, 35, 35, -90, probability);
+  arc(820, 380, 35, 35, 270, probability);
 
 }
 
 function gotWeather(weather) {
-    probability = weather.current.humidity;
+    chanceOfRain = weather.current.humidity;
+    probability = map(chanceOfRain, 0, 100, 0, 360)
 }
 
 // function writeProbability() {
