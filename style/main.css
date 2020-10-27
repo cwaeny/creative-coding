@@ -160,7 +160,7 @@ body {
    background-size: 100%;
    background-repeat:no-repeat;
    background-position: center;
-   min-height: 50vh;
+   min-height: 100%;
    background-color: #f7f7f7;
  }
 
@@ -169,7 +169,7 @@ body {
    background-size: 85%;
    background-repeat:no-repeat;
    background-position: center;
-   min-height: 50vh;
+   min-height: 100%;
    background-color: #f7f7f7;
  }
 
@@ -178,7 +178,7 @@ body {
    background-size: 90%;
    background-repeat:no-repeat;
    background-position: center;
-   min-height: 50vh;
+   min-height: 100%;
    background-color: #f7f7f7;
  }
 
@@ -228,6 +228,7 @@ a:hover {
     padding-left: 2rem;
     padding-right: 2.1rem;
     padding-top: 20%;
+    padding-bottom: 20%;
 }
 }
 
@@ -250,4 +251,14 @@ h6 {
 
 a.secondary {
   margin-left: 1.5rem;
+}
+
+.imageheight {
+  height:30rem;
+}
+
+@media (min-width: 992px){
+  .imageheight {
+    height: auto;
+  }
 }

@@ -15,10 +15,11 @@ var wahrscheinlichkeitSteps = 1;
 var regenstärke = 2;
 //set slider range with magic variables
 var regenstärkeMin = 1;
-var regenstärkeMax = 50;
+var regenstärkeMax = 55;
 var regenstärkeSteps = 1;
 
 var jahreszeit = ['Herbst', 'Winter', 'Frühling', 'Sommer'];
+var tageszeit = ['Tag', 'Nacht'];
 
 /*  –––– –––– –––– –––– GUI Setup –––– –––– –––– ––––  */
 
@@ -29,7 +30,7 @@ function setup() {
 
 
   gui = createGui('Rainy days ☔');
-  gui.addGlobals('jahreszeit', 'wahrscheinlichkeit', 'windrichtung', 'regenstärke');
+  gui.addGlobals('jahreszeit', 'wahrscheinlichkeit', 'windrichtung', 'regenstärke',  'tageszeit');
 
   //only call draw when then gui is changed
   noLoop();
@@ -38,7 +39,17 @@ function setup() {
 /*  –––– –––– –––– –––– Draw –––– –––– –––– ––––  */
 
 function draw() {
-  background('#F4F1F0');
+
+    switch (tageszeit) {
+      case 'Tag' :
+        var bgColor = [255, 255, 255, 1];
+        break;
+      case 'Nacht' :
+        var bgColor = [0, 0, 0, 1];
+        break;
+    }
+
+  background(bgColor);
   colorMode(HSL);
   angleMode(DEGREES);
 
@@ -69,7 +80,6 @@ function draw() {
   let size = wahrscheinlichkeit + 50;
   randomSeed(5); //let drops keep its color even when slider changes
 
-
   //draw drops – each with a random color
   for (let i = 0; i <= width; i+=60) {
     for (let q = 0; q <= height; q+=60) {
@@ -84,12 +94,12 @@ function draw() {
         stroke(third);
       }
 
-      //setting windrichtung -> rotate
-      push(); //KOSY-Position abspeichern, Mittelpunkt definieren
+      //setting for windrichtung -> rotate
+      push(); //save postition to define center
 
       translate(0+i+size/2,0+q+size/2);
       rotate(windrichtung);
-      //Tropfen zürück zur ursprünglichen Position
+      //set the drops back to its postion
       translate(-1*(0+i+size/2), -1*(0+q+size/2));
       strokeWeight(regenstärke);
       noFill();

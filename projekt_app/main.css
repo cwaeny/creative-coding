@@ -1,0 +1,41 @@
+@import url("https://use.typekit.net/jao4tus.css");
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+input {
+  height: 40px;
+  width: 200px;
+  border: none;
+  padding-left: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+button {
+  height: 40px;
+  width: 90px;
+  border: none;
+  background: #022941;
+  color: white;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
